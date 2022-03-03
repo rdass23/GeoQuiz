@@ -1,4 +1,4 @@
-package com.example.robotheexplorer
+package com.example.GeoQuiz
 
 import android.Manifest
 import android.content.Context

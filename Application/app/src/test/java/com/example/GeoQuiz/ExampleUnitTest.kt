@@ -1,4 +1,4 @@
-package com.example.robotheexplorer
+package com.example.GeoQuiz
 
 import org.junit.Test
 

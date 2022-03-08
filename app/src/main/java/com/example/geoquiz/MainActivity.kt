@@ -27,14 +27,10 @@ class MainActivity : AppCompatActivity() {
 
         map = findViewById<MapView>(R.id.map)
         map.setTileSource(TileSourceFactory.MAPNIK);
+        map.minZoomLevel = 0.15
+        map.setScrollableAreaLimitLatitude(MapView.getTileSystem().getMaxLatitude(), MapView.getTileSystem().getMinLatitude(), 0);
 
         map.tilesScaleFactor = 3F
-
-        val mapController = map.controller
-        mapController.setZoom(9.5)
-        val startPoint = GeoPoint(48.8583, 2.2944);
-        mapController.setCenter(startPoint);
-
     }
 
     override fun onResume() {

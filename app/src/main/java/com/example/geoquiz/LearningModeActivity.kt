@@ -1,19 +1,19 @@
 package com.example.geoquiz
 
+import android.location.Geocoder
 import android.os.Bundle
 import android.preference.PreferenceManager
-import com.google.android.material.snackbar.Snackbar
+import android.view.MotionEvent
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.geoquiz.databinding.ActivityLearningModeBinding
+import org.osmdroid.bonuspack.location.GeocoderNominatim
 import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
+import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
-import java.util.ArrayList
+import org.osmdroid.views.Projection
+
 
 class LearningModeActivity : AppCompatActivity() {
 
@@ -32,6 +32,7 @@ class LearningModeActivity : AppCompatActivity() {
         map.minZoomLevel = 0.15
         map.setScrollableAreaLimitLatitude(MapView.getTileSystem().getMaxLatitude(), MapView.getTileSystem().getMinLatitude(), 0);
 
+        map.controller.setZoom(1.0)
         map.tilesScaleFactor = 3F
     }
 
@@ -67,5 +68,27 @@ class LearningModeActivity : AppCompatActivity() {
                 permissionsToRequest.toTypedArray(),
                 REQUEST_PERMISSIONS_REQUEST_CODE);
         }
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
+        val actionType = ev.action
+        when (actionType) {
+            MotionEvent.ACTION_UP -> {
+                val proj: Projection = map.projection
+                val loc: GeoPoint = proj.fromPixels(ev.x.toInt(), ev.y.toInt()) as GeoPoint
+                val longitude = loc.longitude
+                val latitude = loc.latitude
+                val results = Geocoder(this).getFromLocation(latitude, longitude, 1)
+                if (results != null) {
+                    val country = results[0].countryName
+                    val toast = Toast.makeText(
+                        applicationContext,
+                        "Country $country", Toast.LENGTH_LONG
+                    )
+                    toast.show()
+                }
+            }
+        }
+        return super.dispatchTouchEvent(ev)
     }
 }

@@ -19,4 +19,9 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun selectQuizMode(view: View) {
+        val intent = Intent(this, QuizSelectionActivity::class.java)
+        startActivity(intent)
+    }
+
 }

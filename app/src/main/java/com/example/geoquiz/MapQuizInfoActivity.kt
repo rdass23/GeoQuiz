@@ -1,7 +1,9 @@
 package com.example.geoquiz
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 class MapQuizInfoActivity : AppCompatActivity() {
 
@@ -11,7 +13,12 @@ class MapQuizInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_map_quiz_info)
     }
 
-    fun goBack() {
+    fun goBack(view: View) {
         finish()
+    }
+
+    fun startQuiz(view: View) {
+        val intent = Intent(this, CountryQuizActivity::class.java)
+        startActivity(intent)
     }
 }

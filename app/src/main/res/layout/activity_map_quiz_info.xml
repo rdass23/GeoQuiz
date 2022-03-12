@@ -22,6 +22,7 @@
         android:layout_height="79dp"
         android:layout_marginStart="228dp"
         android:text="Start Quiz!"
+        android:onClick="startQuiz"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mapQuizInfo" />
 

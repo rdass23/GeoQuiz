@@ -15,6 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GeoQuiz">
         <activity
+            android:name=".CountryQuizActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".MapQuizInfoActivity"
             android:exported="false"
             android:screenOrientation="landscape" />

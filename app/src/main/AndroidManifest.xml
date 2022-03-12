@@ -15,10 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GeoQuiz">
         <activity
+            android:name=".QuizSelectionActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
+        <activity
             android:name=".LearningModeActivity"
             android:exported="false"
             android:label="@string/title_activity_learning_mode"
-            android:theme="@style/Theme.GeoQuiz.NoActionBar" />
+            android:theme="@style/Theme.GeoQuiz.NoActionBar"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -28,7 +28,7 @@ class LearningModeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_learning_mode)
 
         map = findViewById<MapView>(R.id.map)
-        map.setTileSource(TileSourceFactory.DEFAULT_TILE_SOURCE);
+        map.setTileSource(TileSourceFactory.MAPNIK)
         map.minZoomLevel = 0.15
         map.setScrollableAreaLimitLatitude(MapView.getTileSystem().getMaxLatitude(), MapView.getTileSystem().getMinLatitude(), 0);
 
@@ -80,12 +80,14 @@ class LearningModeActivity : AppCompatActivity() {
                 val latitude = loc.latitude
                 val results = Geocoder(this).getFromLocation(latitude, longitude, 1)
                 if (results != null) {
-                    val country = results[0].countryName
-                    val toast = Toast.makeText(
-                        applicationContext,
-                        "Country $country", Toast.LENGTH_LONG
-                    )
-                    toast.show()
+                    if(results.size > 0) {
+                        val country = results[0].countryName
+                        val toast = Toast.makeText(
+                            applicationContext,
+                            "Country $country", Toast.LENGTH_LONG
+                        )
+                        toast.show()
+                    }
                 }
             }
         }

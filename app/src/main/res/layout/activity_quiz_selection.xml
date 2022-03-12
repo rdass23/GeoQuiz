@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizSelectionActivity">
+
+    <TextView
+        android:id="@+id/countryQuizInfo"
+        android:layout_width="158dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="171dp"
+        android:layout_marginTop="105dp"
+        android:text="MapQuiz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/flagQuizInfo"
+        android:layout_width="158dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="105dp"
+        android:text="FlagQuiz"
+        app:layout_constraintStart_toEndOf="@+id/countryQuizInfo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/selectCountryQuiz"
+        android:layout_width="156dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="172dp"
+        android:onClick="startCountryQuiz"
+        android:text="select"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countryQuizInfo" />
+
+    <Button
+        android:id="@+id/selectFlagQuiz"
+        android:layout_width="158dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="1dp"
+        android:text="select"
+        app:layout_constraintStart_toEndOf="@+id/selectCountryQuiz"
+        app:layout_constraintTop_toBottomOf="@+id/flagQuizInfo" />
+
+    <Button
+        android:id="@+id/backButtonQuizSelect"
+        android:layout_width="81dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        android:onClick="goBack"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

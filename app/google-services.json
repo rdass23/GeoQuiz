@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "707256321033",
+    "project_id": "geoquiz-3b4a6",
+    "storage_bucket": "geoquiz-3b4a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707256321033:android:899a3daffde59a1e92a4d8",
+        "android_client_info": {
+          "package_name": "com.example.geoquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707256321033-u1n7gn14fnda4fj8khnqefrp8in6an8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrD7BgfABpsq9ql5wWS2bo6zfYFn-ApDg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707256321033-u1n7gn14fnda4fj8khnqefrp8in6an8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

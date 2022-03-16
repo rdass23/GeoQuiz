@@ -23,4 +23,9 @@ class QuizSelectionActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun startFlagQuiz(view: View) {
+        val intent = Intent(this, FlagQuizActivity::class.java)
+        startActivity(intent)
+    }
+
 }

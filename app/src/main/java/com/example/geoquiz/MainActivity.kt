@@ -4,6 +4,7 @@ package com.example.geoquiz
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 
@@ -14,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    override fun onBackPressed() {
+        Toast.makeText(this, "You can't do that", Toast.LENGTH_SHORT).show()
+    }
+
     fun selectLearningMode(view: View) {
         val intent = Intent(this, LearningModeActivity::class.java)
         startActivity(intent)
@@ -21,16 +26,6 @@ class MainActivity : AppCompatActivity() {
 
     fun selectQuizMode(view: View) {
         val intent = Intent(this, QuizSelectionActivity::class.java)
-        startActivity(intent)
-    }
-
-    fun selectLeaderBoard(view: View) {
-        val intent = Intent(this, WorldLeaderboardActivity::class.java)
-        startActivity(intent)
-    }
-
-    fun selectHighScore(view: View) {
-        val intent = Intent(this, HighScoreActivity::class.java)
         startActivity(intent)
     }
 

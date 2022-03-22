@@ -14,7 +14,8 @@ class MapQuizInfoActivity : AppCompatActivity() {
     }
 
     fun goBack(view: View) {
-        finish()
+        val intent = Intent(this, QuizSelectionActivity::class.java)
+        startActivity(intent)
     }
 
     fun startQuiz(view: View) {

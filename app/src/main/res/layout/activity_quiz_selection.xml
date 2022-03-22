@@ -24,7 +24,7 @@
         android:layout_marginStart="87dp"
         android:layout_marginTop="112dp"
         android:gravity="center"
-        android:text="FlagQuiz \n\nMatch the name of the country to the flag"
+        android:text="Flag Quiz \n\nMatch the name of the country to the flag"
         app:layout_constraintStart_toEndOf="@+id/countryQuizInfo"
         app:layout_constraintTop_toTopOf="parent" />
 

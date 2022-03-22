@@ -3,6 +3,7 @@ package com.example.geoquiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 
 class QuizResultsActivity : AppCompatActivity() {
@@ -20,19 +21,19 @@ class QuizResultsActivity : AppCompatActivity() {
         }
     }
 
-    fun playAgain() {
+    fun playAgain(view: View) {
         val gameType = intent.extras?.get("gametype")
-
+        println(gameType)
         if (gameType == "flagquiz") {
-            val intent = Intent(this, FlagQuizActivity::class.java)
+            val intent = Intent(this, FlagQuizInfoActivity::class.java)
             startActivity(intent)
         } else if (gameType == "countryquiz") {
-            val intent = Intent(this, CountryQuizActivity::class.java)
+            val intent = Intent(this, MapQuizInfoActivity::class.java)
             startActivity(intent)
         }
     }
 
-    fun backButton() {
+    fun backButtonResults(view: View) {
         val intent = Intent(this, QuizSelectionActivity::class.java)
         startActivity(intent)
     }

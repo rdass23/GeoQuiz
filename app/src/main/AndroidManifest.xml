@@ -8,29 +8,33 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".QuizApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".QuizApplication"
         android:theme="@style/Theme.GeoQuiz">
+        <activity
+            android:name=".FlagQuizInfoActivity"
+            android:screenOrientation="landscape"
+            android:exported="false" />
         <activity
             android:name=".HighScoreActivity"
             android:exported="false"
-            android:screenOrientation="landscape"
             android:label="@string/title_activity_high_score"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.GeoQuiz" />
         <activity
             android:name=".WorldLeaderboardActivity"
             android:exported="false"
-            android:screenOrientation="landscape"
             android:label="@string/title_activity_world_leaderboard"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.GeoQuiz" />
         <activity
             android:name=".FlagQuizActivity"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".QuizResultsActivity"
             android:exported="false"
@@ -56,9 +60,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".LoadActivity"
             android:exported="true"

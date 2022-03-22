@@ -64,6 +64,7 @@ class FlagQuizActivity : AppCompatActivity(), View.OnClickListener {
         currentQuestion += 1
         if (currentQuestion > 10) {
             val intent = Intent(this, QuizResultsActivity::class.java)
+            intent.putExtra("gametype", "flagquiz")
             intent.putExtra("score", correct)
             startActivity(intent)
         } else {

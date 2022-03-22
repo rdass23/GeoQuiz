@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_country_quiz.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_flag_quiz.xml" value="0.40625" />
+        <entry key="app/src/main/res/layout/activity_flag_quiz_info.xml" value="0.4265625" />
         <entry key="app/src/main/res/layout/activity_learning_mode.xml" value="0.4265625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_map_quiz_info.xml" value="0.25" />

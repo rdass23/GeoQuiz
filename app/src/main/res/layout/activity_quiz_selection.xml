@@ -10,9 +10,10 @@
         android:id="@+id/countryQuizInfo"
         android:layout_width="158dp"
         android:layout_height="129dp"
-        android:layout_marginStart="171dp"
-        android:layout_marginTop="105dp"
-        android:text="MapQuiz"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="112dp"
+        android:gravity="center"
+        android:text="Country Quiz \n\nMatch the name of the country to the fact"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,16 +22,17 @@
         android:layout_width="158dp"
         android:layout_height="128dp"
         android:layout_marginStart="87dp"
-        android:layout_marginTop="105dp"
-        android:text="FlagQuiz"
+        android:layout_marginTop="112dp"
+        android:gravity="center"
+        android:text="FlagQuiz \n\nMatch the name of the country to the flag"
         app:layout_constraintStart_toEndOf="@+id/countryQuizInfo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/selectCountryQuiz"
-        android:layout_width="156dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="172dp"
+        android:layout_width="158dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="160dp"
         android:onClick="startCountryQuiz"
         android:text="select"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,9 +41,9 @@
     <Button
         android:id="@+id/selectFlagQuiz"
         android:layout_width="158dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="87dp"
-        android:layout_marginTop="1dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="88dp"
+        android:onClick="startFlagQuiz"
         android:text="select"
         app:layout_constraintStart_toEndOf="@+id/selectCountryQuiz"
         app:layout_constraintTop_toBottomOf="@+id/flagQuizInfo" />

@@ -38,6 +38,7 @@ class CountryGetter(scrapy.Spider):
 
         # Country Facts
         president = ""
+        capital = ""
         primeMinister = ""
         area = ""
         population = ""
@@ -59,6 +60,32 @@ class CountryGetter(scrapy.Spider):
                 primeMinister = primeMinister.replace('</p>', "")
                 primeMinister = primeMinister.replace('<p><b pageno="1">Prime Minister:</b>', "")
                 primeMinister = primeMinister.replace('<p><b>Prime Minister: </b>', "")
+
+            if "Capital" in fact:
+                #Clean up HTML
+                capital = fact.replace('<p><a href="/world/countries/world-capitals" pageno="1"><b pageno="1">', "")
+                capital = capital.replace('<p><a href="/world/countries/world-capitals"><b>', "")
+                capital = capital.replace('<p><a href="http://www.factmonster.com/cgi-bin/id/A0855603"><strong>', "")
+                capital = capital.replace('</b> </a> <!--?php endif; ?--> ', "")
+                capital = capital.replace('<p><a href="http://www.factmonster.com/world/countries/A0855603.html"><strong>', "")
+                capital = capital.replace("</b></a> <!--?php endif; ?--> ", "")
+                capital = capital.replace("</b></a><b> <!--?php endif; ?-->", "")
+                capital = capital.replace('</b></a><b>:</b> <!--?php endif; ?--> ', "")
+                capital = capital.replace('</b> </a> ', "")
+                capital = capital.replace('</p>', "")
+                capital = capital.replace('</strong> </a>', '')
+                capital = capital.replace('</strong></a>', '')
+                capital = capital.replace('</b> <!--?php endif; ?-->', "")
+                capital = capital.replace('</strong> </a>', "")
+                capital = capital.replace("</b></a> ", "")
+                capital = capital.replace(" <!--?php endif; ?--> ", "")
+                capital = capital.replace('; <b pageno="1">Largest city and administrative center', "")
+                capital = capital.replace('Capital and largest city (2011 est.)', "")
+
+                if ":" in capital:
+                    capital = capital.split(":")[1]
+                if "," in capital:
+                    capital = capital.split(",")[0]
 
 
             # Get total area
@@ -88,6 +115,7 @@ class CountryGetter(scrapy.Spider):
 
         yield {
             'country': country,
+            'capital': capital,
             'president': president,
             'primeMinister': primeMinister,
             'area': area,

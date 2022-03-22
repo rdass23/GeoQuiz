@@ -15,7 +15,8 @@ class QuizSelectionActivity : AppCompatActivity() {
     }
 
     fun goBack(view: View) {
-        finish()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     fun startCountryQuiz(view: View) {
@@ -24,7 +25,7 @@ class QuizSelectionActivity : AppCompatActivity() {
     }
 
     fun startFlagQuiz(view: View) {
-        val intent = Intent(this, FlagQuizActivity::class.java)
+        val intent = Intent(this, FlagQuizInfoActivity::class.java)
         startActivity(intent)
     }
 

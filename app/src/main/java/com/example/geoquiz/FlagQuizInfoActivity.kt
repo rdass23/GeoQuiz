@@ -5,12 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class MapQuizInfoActivity : AppCompatActivity() {
+class FlagQuizInfoActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_map_quiz_info)
+        setContentView(R.layout.activity_flag_quiz_info)
     }
 
     fun goBack(view: View) {
@@ -19,7 +19,8 @@ class MapQuizInfoActivity : AppCompatActivity() {
     }
 
     fun startQuiz(view: View) {
-        val intent = Intent(this, CountryQuizActivity::class.java)
+        val intent = Intent(this, FlagQuizActivity::class.java)
         startActivity(intent)
     }
+
 }

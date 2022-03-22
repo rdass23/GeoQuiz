@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapQuizInfoActivity">
+    tools:context=".FlagQuizInfoActivity">
 
     <TextView
         android:id="@+id/titleOfQuiz"
@@ -13,7 +13,7 @@
         android:layout_marginStart="224dp"
         android:layout_marginTop="44dp"
         android:gravity="center"
-        android:text="FACT QUIZ"
+        android:text="FLAG QUIZ"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,12 +25,12 @@
         android:layout_height="103dp"
         android:layout_marginStart="221dp"
         android:layout_marginTop="128dp"
-        android:text="• Select the country to the corresponding fact\n• Quiz is out of ten questions\n• You have unlimited time to complete the quiz\n• Imrprove your highscore by scoring a great score"
+        android:text="• Select the country to the corresponding flag\n• Quiz is out of ten questions\n• You have unlimited time to complete the quiz\n• Imrprove your highscore by scoring a great score"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/startMapQuizBtn"
+        android:id="@+id/startFlagQuizBtn"
         android:layout_width="303dp"
         android:layout_height="79dp"
         android:layout_marginStart="228dp"

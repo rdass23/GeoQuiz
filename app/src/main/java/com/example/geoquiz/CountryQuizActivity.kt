@@ -66,6 +66,7 @@ class CountryQuizActivity : AppCompatActivity(), View.OnClickListener {
         if (currentQuestion > 10) {
             val intent = Intent(this, QuizResultsActivity::class.java)
             intent.putExtra("score", correct)
+            intent.putExtra("gametype", "countryquiz")
             startActivity(intent)
         } else {
             setupQuestion()
@@ -169,27 +170,31 @@ class CountryQuizActivity : AppCompatActivity(), View.OnClickListener {
         when (view.id) {
             R.id.choiceA ->
                 if (correctAnswer == Choice.A) {
-                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
+                    correct += 1
                 } else {
-                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
             R.id.choiceB ->
                 if (correctAnswer == Choice.B) {
-                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
+                    correct += 1
                 } else {
-                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
             R.id.choiceC ->
                 if (correctAnswer == Choice.C) {
-                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
+                    correct += 1
                 } else {
-                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
             R.id.choiceD ->
                 if (correctAnswer == Choice.D) {
-                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
+                    correct += 1
                 } else {
-                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
         }
         runQuiz()

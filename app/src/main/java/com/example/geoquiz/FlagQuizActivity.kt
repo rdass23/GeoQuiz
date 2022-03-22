@@ -133,27 +133,31 @@ class FlagQuizActivity : AppCompatActivity(), View.OnClickListener {
         when (view.id) {
             R.id.choiceAFlag ->
                 if (correctAnswer == CountryQuizActivity.Choice.A) {
-                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
+                    correct += 1
                 } else {
-                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
             R.id.choiceBFlag ->
                 if (correctAnswer == CountryQuizActivity.Choice.B) {
-                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
+                    correct += 1
                 } else {
-                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
             R.id.choiceCFlag ->
                 if (correctAnswer == CountryQuizActivity.Choice.C) {
-                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
+                    correct += 1
                 } else {
-                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
             R.id.choiceDFlag ->
                 if (correctAnswer == CountryQuizActivity.Choice.D) {
-                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
+                    correct += 1
                 } else {
-                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
         }
         runQuiz()

@@ -7,12 +7,25 @@
     tools:context=".FlagQuizInfoActivity">
 
     <TextView
+        android:id="@+id/titleOfQuiz"
+        android:layout_width="315dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="44dp"
+        android:gravity="center"
+        android:text="FLAG QUIZ"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/mapQuizInfo"
         android:layout_width="321dp"
         android:layout_height="103dp"
         android:layout_marginStart="221dp"
         android:layout_marginTop="128dp"
-        android:text="Lorem Ipsum"
+        android:text="• Select the country to the corresponding flag\n• Quiz is out of ten questions\n• You have unlimited time to complete the quiz\n• Imrprove your highscore by scoring a great score"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

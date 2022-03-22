@@ -32,7 +32,7 @@
     <TextView
         android:id="@+id/learningModeText"
         android:layout_width="150dp"
-        android:layout_height="124dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
         android:layout_marginTop="96dp"
         android:gravity="center"
@@ -50,5 +50,27 @@
         android:text="Quiz Mode \n\n• Map Quiz\n• Country Quiz\n• Leaderboard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonLeaderboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Leaderboard"
+        android:onClick="selectLeaderBoard"
+        app:layout_constraintEnd_toEndOf="@+id/learningModeBtn"
+        app:layout_constraintStart_toStartOf="@+id/learningModeBtn"
+        app:layout_constraintTop_toBottomOf="@+id/learningModeBtn" />
+
+    <Button
+        android:id="@+id/buttonHighScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="selectHighScore"
+        android:text="High-Score"
+        app:layout_constraintEnd_toEndOf="@+id/quizModeBtn"
+        app:layout_constraintStart_toStartOf="@+id/quizModeBtn"
+        app:layout_constraintTop_toBottomOf="@+id/quizModeBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

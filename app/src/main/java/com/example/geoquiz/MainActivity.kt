@@ -24,4 +24,14 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun selectLeaderBoard(view: View) {
+        val intent = Intent(this, WorldLeaderboardActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun selectHighScore(view: View) {
+        val intent = Intent(this, HighScoreActivity::class.java)
+        startActivity(intent)
+    }
+
 }

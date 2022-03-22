@@ -3,4 +3,8 @@
     <string name="title_activity_learning_mode">LearningModeActivity</string>
     <!-- Strings used for fragments for navigation -->
 
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_world_leaderboard">WorldLeaderboard</string>
+    <string name="title_activity_high_score">HighScoreActivity</string>
 </resources>

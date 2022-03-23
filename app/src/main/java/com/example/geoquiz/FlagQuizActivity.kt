@@ -3,6 +3,7 @@ package com.example.geoquiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.Gravity
 import android.view.View
 import android.widget.Button
@@ -20,6 +21,16 @@ class FlagQuizActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var choiceC: Button
     private lateinit var choiceD: Button
 
+    private lateinit var correctA: ImageView
+    private lateinit var correctB: ImageView
+    private lateinit var correctC: ImageView
+    private lateinit var correctD: ImageView
+
+    private lateinit var wrongA: ImageView
+    private lateinit var wrongB: ImageView
+    private lateinit var wrongC: ImageView
+    private lateinit var wrongD: ImageView
+
     private var countries = arrayListOf<Country>()
     private var correct = 0
     private var currentQuestion = 0
@@ -35,6 +46,16 @@ class FlagQuizActivity : AppCompatActivity(), View.OnClickListener {
         choiceB = findViewById<Button>(R.id.choiceBFlag)
         choiceC = findViewById<Button>(R.id.choiceCFlag)
         choiceD = findViewById<Button>(R.id.choiceDFlag)
+
+        correctA = findViewById<ImageView>(R.id.correctFA)
+        correctB = findViewById<ImageView>(R.id.correctFB)
+        correctC = findViewById<ImageView>(R.id.correctFC)
+        correctD = findViewById<ImageView>(R.id.correctFD)
+
+        wrongA = findViewById<ImageView>(R.id.wrongFA)
+        wrongB = findViewById<ImageView>(R.id.wrongFB)
+        wrongC = findViewById<ImageView>(R.id.wrongFC)
+        wrongD = findViewById<ImageView>(R.id.wrongFD)
 
         choiceA.setOnClickListener(this)
         choiceB.setOnClickListener(this)
@@ -68,9 +89,20 @@ class FlagQuizActivity : AppCompatActivity(), View.OnClickListener {
             intent.putExtra("score", correct)
             startActivity(intent)
         } else {
+            hideAllImages()
             setupQuestion()
         }
+    }
 
+    fun hideAllImages() {
+        correctA.visibility = View.INVISIBLE
+        correctB.visibility = View.INVISIBLE
+        correctC.visibility = View.INVISIBLE
+        correctD.visibility = View.INVISIBLE
+        wrongA.visibility = View.INVISIBLE
+        wrongB.visibility = View.INVISIBLE
+        wrongC.visibility = View.INVISIBLE
+        wrongD.visibility = View.INVISIBLE
     }
 
     fun setupQuestion() {
@@ -130,8 +162,25 @@ class FlagQuizActivity : AppCompatActivity(), View.OnClickListener {
         return retWrong
     }
 
-
-
+    fun showCorrectImages(correct: CountryQuizActivity.Choice) {
+        wrongA.visibility = View.VISIBLE
+        wrongB.visibility = View.VISIBLE
+        wrongC.visibility = View.VISIBLE
+        wrongD.visibility = View.VISIBLE
+        if (correct == CountryQuizActivity.Choice.A) {
+            wrongA.visibility = View.INVISIBLE
+            correctA.visibility = View.VISIBLE
+        } else if (correct == CountryQuizActivity.Choice.B) {
+            wrongB.visibility = View.INVISIBLE
+            correctB.visibility = View.VISIBLE
+        } else if (correct == CountryQuizActivity.Choice.C) {
+            wrongC.visibility = View.INVISIBLE
+            correctC.visibility = View.VISIBLE
+        } else if (correct == CountryQuizActivity.Choice.D) {
+            wrongD.visibility = View.INVISIBLE
+            correctD.visibility = View.VISIBLE
+        }
+    }
 
     override fun onClick(view: View) {
         when (view.id) {
@@ -164,7 +213,8 @@ class FlagQuizActivity : AppCompatActivity(), View.OnClickListener {
                     Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
         }
-        runQuiz()
+        showCorrectImages(correctAnswer)
+        Handler().postDelayed(this::runQuiz, 3000)
     }
 
     fun exitQuiz(view: View) {

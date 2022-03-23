@@ -25,7 +25,7 @@
         android:layout_height="103dp"
         android:layout_marginStart="221dp"
         android:layout_marginTop="128dp"
-        android:text="• Select the country to the corresponding flag\n• Quiz is out of ten questions\n• You have unlimited time to complete the quiz\n• Imrprove your highscore by scoring a great score"
+        android:text="• Select the country to the corresponding flag\n• Quiz is out of ten questions\n• You have unlimited time to complete the quiz\n• Improve your highscore by scoring a great score"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

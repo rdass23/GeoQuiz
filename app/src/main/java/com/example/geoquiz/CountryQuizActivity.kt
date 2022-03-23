@@ -196,8 +196,17 @@ class CountryQuizActivity : AppCompatActivity(), View.OnClickListener {
                 } else {
                     Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
+            R.id.exitButtonCountry -> {
+                val intent = Intent(this, QuizSelectionActivity::class.java)
+                startActivity(intent)
+            }
         }
         runQuiz()
+    }
+
+    fun exitQuiz(view: View) {
+        val intent = Intent(this, QuizSelectionActivity::class.java)
+        startActivity(intent)
     }
 
     enum class Choice {

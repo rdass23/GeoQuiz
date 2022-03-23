@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/exitButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FlagQuizActivity">
@@ -76,5 +77,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flagQuizTitle"
         app:srcCompat="@drawable/canada" />
+
+    <ImageButton
+        android:id="@+id/exitButtonFlag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="27dp"
+        android:rotation="180"
+        android:clickable="true"
+        android:onClick="exitQuiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_logout_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -130,6 +130,9 @@ class FlagQuizActivity : AppCompatActivity(), View.OnClickListener {
         return retWrong
     }
 
+
+
+
     override fun onClick(view: View) {
         when (view.id) {
             R.id.choiceAFlag ->
@@ -162,6 +165,11 @@ class FlagQuizActivity : AppCompatActivity(), View.OnClickListener {
                 }
         }
         runQuiz()
+    }
+
+    fun exitQuiz(view: View) {
+        val intent = Intent(this, QuizSelectionActivity::class.java)
+        startActivity(intent)
     }
 
 }

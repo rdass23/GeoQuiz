@@ -3,7 +3,10 @@ package com.example.geoquiz
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import android.widget.PopupMenu
 import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
@@ -28,5 +31,13 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, QuizSelectionActivity::class.java)
         startActivity(intent)
     }
+
+    fun showPopup(v: View) {
+        val popup = PopupMenu(this, v)
+        val inflater: MenuInflater = popup.menuInflater
+        inflater.inflate(R.menu.menu, popup.menu)
+        popup.show()
+    }
+
 
 }

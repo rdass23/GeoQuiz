@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.widget.ProgressBar
+import com.example.geoquiz.persistence.CurrentUser
 
 class LoadActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +21,6 @@ class LoadActivity : AppCompatActivity() {
         animation.start()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            // TODO: check for username
             if (usernameIsSet()) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
@@ -33,6 +33,6 @@ class LoadActivity : AppCompatActivity() {
     }
 
     private fun usernameIsSet(): Boolean {
-        return false
+        return CurrentUser.getUser().userName != ""
     }
 }

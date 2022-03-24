@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.example.geoquiz.persistence.CurrentUser
 
 class LoginActivity : AppCompatActivity(){
     private lateinit var db: DatabaseReference
@@ -31,7 +32,7 @@ class LoginActivity : AppCompatActivity(){
 
             userExists.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    if (dataSnapshot.exists()) {
+                    if (dataSnapshot.exists() || username == "") {
                         // if username exists show error
                         val error = findViewById<TextView>(R.id.errorText)
                         error.visibility = View.VISIBLE
@@ -54,6 +55,7 @@ class LoginActivity : AppCompatActivity(){
     private fun setUsername(userId: String, userName: String) {
         val user = User(userName, 0, 0)
 
+        CurrentUser.setUser(user)
         db.child("users").child(userId).setValue(user)
     }
 }

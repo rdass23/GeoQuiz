@@ -1,5 +1,6 @@
 package com.example.geoquiz
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -21,6 +22,7 @@ class LoginActivity : AppCompatActivity(){
 
         val button = findViewById<Button>(R.id.button)
         db = Firebase.database.reference
+        val thisAct = this
 
         button.setOnClickListener(){
             val editUsername = findViewById<EditText>(R.id.editUsername)
@@ -36,7 +38,9 @@ class LoginActivity : AppCompatActivity(){
 
                     } else {
                         //if username doesn't exist, create user
-                        //setUsername(,username)
+                        setUsername(username,username)
+                        val intent = Intent(thisAct, MainActivity::class.java)
+                        startActivity(intent)
                     }
                 }
 

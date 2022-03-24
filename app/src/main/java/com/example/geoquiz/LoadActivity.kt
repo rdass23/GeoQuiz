@@ -21,8 +21,18 @@ class LoadActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             // TODO: check for username
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            if (usernameIsSet()) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+            else{
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
         }, 2000)
+    }
+
+    private fun usernameIsSet(): Boolean {
+        return false
     }
 }

@@ -51,6 +51,9 @@
             android:name=".QuizSelectionActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
+        <activity android:name=".InfoCardActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".LearningModeActivity"
             android:exported="false"

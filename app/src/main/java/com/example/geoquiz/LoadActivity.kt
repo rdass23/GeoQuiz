@@ -13,15 +13,14 @@ class LoadActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_load)
         val bar = findViewById<ProgressBar>(R.id.progressBar)
-        
+
         bar.max = 100
         val animation = ObjectAnimator.ofInt(bar, "progress", 100)
         animation.duration = 2000
         animation.start()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            // TODO: check for username
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }, 2000)
     }

@@ -72,8 +72,8 @@ class LoginActivity : AppCompatActivity(){
         val sharedPref = this.getPreferences(Context.MODE_PRIVATE) ?: return
         with (sharedPref.edit()) {
             putString("uid", user.userName)
-            putInt("mhs", user.mapHighScore)
-            putInt("qhs", user.quizHighScore)
+            putInt("mhs", user.factHighScore)
+            putInt("qhs", user.flagHighScore)
             apply()
         }
     }

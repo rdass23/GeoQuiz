@@ -9,9 +9,13 @@ import android.view.View
 import android.widget.PopupMenu
 import android.widget.TextView
 import com.example.geoquiz.persistence.CurrentUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class QuizResultsActivity : AppCompatActivity() {
 
+    private var db: DatabaseReference = Firebase.database.reference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +30,10 @@ class QuizResultsActivity : AppCompatActivity() {
             val gameType = intent.extras?.get("gametype")
             if (gameType == "flagquiz") {
                 user.flagHighScore = score as Int
+                db.child("users").child(user.userName).setValue(user)
             } else if (gameType == "countryquiz") {
                 user.factHighScore = score as Int
+                db.child("users").child(user.userName).setValue(user)
             }
         }
     }

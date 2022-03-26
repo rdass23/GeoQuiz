@@ -32,6 +32,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.geoquiz.persistence.CurrentUser
 import com.example.geoquiz.ui.theme.GeoQuizTheme
 
 class HighScoreActivity : ComponentActivity() {
@@ -62,9 +63,10 @@ fun HighScoreScreen() {
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.h4
         )
+        val user = CurrentUser.getUser()
         Row(Modifier.fillMaxWidth()) {
-            HighScore("Map", "10/10", modifier = Modifier.weight(.5f))
-            HighScore("Country", "9/10", modifier = Modifier.weight(.5f))
+            HighScore("Fact", user.factHighScore.toString() + "/10", modifier = Modifier.weight(.5f))
+            HighScore("Flag", user.flagHighScore.toString() + "/10", modifier = Modifier.weight(.5f))
         }
     }
 }

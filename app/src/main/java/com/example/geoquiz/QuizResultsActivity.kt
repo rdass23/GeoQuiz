@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.PopupMenu
 import android.widget.TextView
+import com.example.geoquiz.persistence.CurrentUser
 
 class QuizResultsActivity : AppCompatActivity() {
 
@@ -21,12 +22,18 @@ class QuizResultsActivity : AppCompatActivity() {
             val score = extras.get("score")
             val scoreView = findViewById<TextView>(R.id.score)
             scoreView.setText(score.toString() + "/10")
+            val user = CurrentUser.getUser()
+            val gameType = intent.extras?.get("gametype")
+            if (gameType == "flagquiz") {
+                user.flagHighScore = score as Int
+            } else if (gameType == "countryquiz") {
+                user.factHighScore = score as Int
+            }
         }
     }
 
     fun playAgain(view: View) {
         val gameType = intent.extras?.get("gametype")
-        println(gameType)
         if (gameType == "flagquiz") {
             val intent = Intent(this, FlagQuizInfoActivity::class.java)
             startActivity(intent)

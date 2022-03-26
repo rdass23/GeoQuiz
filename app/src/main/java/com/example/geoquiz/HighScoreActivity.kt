@@ -76,10 +76,6 @@ fun HighScore(type: String, score: String, modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(32.dp))
         CircleScore(score)
         Spacer(modifier = Modifier.height(32.dp))
-        Row {
-            Icon(imageVector = Icons.Default.Timer, contentDescription = "")
-            Text(text = "1min 9sec")
-        }
     }
 }
 
@@ -111,7 +107,7 @@ fun CircleScore(score: String) {
             style = MaterialTheme.typography.h4,
             modifier = Modifier
                 .padding(32.dp)
-                .defaultMinSize(24.dp) //Use a min size for short text.
+                .defaultMinSize(32.dp) //Use a min size for short text.
         )
     }
 }

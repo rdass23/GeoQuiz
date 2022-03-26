@@ -1,9 +1,13 @@
 package com.example.geoquiz
 
+import android.content.Intent
 import android.location.Geocoder
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.view.MenuInflater
 import android.view.MotionEvent
+import android.view.View
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -92,5 +96,38 @@ class LearningModeActivity : AppCompatActivity() {
             }
         }
         return super.dispatchTouchEvent(ev)
+    }
+
+    fun showPopup(v: View) {
+
+        val popup = PopupMenu(this, v)
+        val inflater: MenuInflater = popup.menuInflater
+        inflater.inflate(R.menu.menu, popup.menu)
+        popup.show()
+        popup.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.learn -> {
+                    val intent = Intent(this@LearningModeActivity, LearningModeActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.quiz -> {
+                    val intent = Intent(this@LearningModeActivity, QuizSelectionActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.lead -> {
+                    val intent = Intent(this@LearningModeActivity, WorldLeaderboardActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.score -> {
+                    val intent = Intent(this@LearningModeActivity, HighScoreActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
     }
 }

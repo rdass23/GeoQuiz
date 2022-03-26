@@ -3,7 +3,10 @@ package com.example.geoquiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import android.widget.PopupMenu
 import android.widget.TextView
 
 class QuizResultsActivity : AppCompatActivity() {
@@ -38,5 +41,37 @@ class QuizResultsActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun showPopup(v: View) {
+
+        val popup = PopupMenu(this, v)
+        val inflater: MenuInflater = popup.menuInflater
+        inflater.inflate(R.menu.menu, popup.menu)
+        popup.show()
+        popup.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.learn -> {
+                    val intent = Intent(this@QuizResultsActivity, LearningModeActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.quiz -> {
+                    val intent = Intent(this@QuizResultsActivity, QuizSelectionActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.lead -> {
+                    val intent = Intent(this@QuizResultsActivity, WorldLeaderboardActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.score -> {
+                    val intent = Intent(this@QuizResultsActivity, HighScoreActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
+    }
 
 }

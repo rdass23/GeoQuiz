@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EAF6E7"
     tools:context=".MainActivity">
 
     <ImageButton
@@ -20,10 +21,9 @@
 
     <Button
         android:id="@+id/learningModeBtn"
-        android:layout_width="150dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="158dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="165dp"
         android:onClick="selectLearningMode"
         android:text="SELECT"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,10 +32,9 @@
 
     <Button
         android:id="@+id/quizModeBtn"
-        android:layout_width="152dp"
-        android:layout_height="58dp"
+        android:layout_width="158dp"
+        android:layout_height="65dp"
         android:layout_marginStart="428dp"
-        android:layout_marginTop="8dp"
         android:onClick="selectQuizMode"
         android:text="SELECT"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,10 +42,10 @@
 
     <TextView
         android:id="@+id/learningModeText"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="96dp"
+        android:layout_width="158dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="112dp"
         android:gravity="center"
         android:text="Learning Mode \n\n• View world map\n• Learn facts about countries"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,10 +53,10 @@
 
     <TextView
         android:id="@+id/quizModeText"
-        android:layout_width="149dp"
-        android:layout_height="89dp"
+        android:layout_width="158dp"
+        android:layout_height="128dp"
         android:layout_marginStart="428dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="112dp"
         android:gravity="center"
         android:text="Quiz Mode \n\n• Map Quiz\n• Country Quiz\n• Leaderboard"
         app:layout_constraintStart_toStartOf="parent"

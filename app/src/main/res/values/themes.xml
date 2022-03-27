@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.GeoQuiz" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#AFE1AF</item>
-        <item name="colorPrimaryVariant">#AFE1AF</item>
+        <item name="colorPrimary">#5FB4D8</item>
+        <item name="colorPrimaryVariant">#5FB4D8</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

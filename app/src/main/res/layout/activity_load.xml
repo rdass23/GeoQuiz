@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#EAF6E7">
 
     <!--Image from: https://search.openverse.engineering/image/5322fda6-811f-4386-8a08-084322e184e3-->
     <!--Image credits: "File:Terra globe icon light.png" by Terra_globe_icon.png: GYassineMrabetTalk✉ derivative work: Дар Ветер (talk) is marked with CC BY-SA 3.0. To view the terms, visit https://creativecommons.org/licenses/by-sa/3.0/?ref=openverse-->
@@ -13,12 +14,12 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="40dp"
         android:scaleX="5"
         android:scaleY="2"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -27,12 +28,15 @@
         android:layout_width="250dp"
         android:layout_height="270dp"
         android:layout_marginBottom="90dp"
+        android:paddingTop="30dp"
+        android:layout_marginTop="30dp"
         android:contentDescription="@+string/Globe icon"
         android:src="@drawable/terra_globe_icon_light"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,19 +29,19 @@ class InfoCardActivity : AppCompatActivity() {
         }
 
         val country = intent.getStringExtra("country")
-        val capital = ""
-        val president = ""
-        val primeMinister = ""
-        val area = ""
-        val population = ""
+        var capital = ""
+        var president = ""
+        var primeMinister = ""
+        var area = ""
+        var population = ""
 
         countries.forEach(){
             if (it.country == country){
-                val capital = it.capital
-                val president = it.president
-                val primeMinister = it.primeMinister
-                val area = it.area
-                val population = it.population
+                capital = it.capital
+                president = it.president
+                primeMinister = it.primeMinister
+                area = it.area
+                population = it.population
             }
         }
 
@@ -55,22 +55,44 @@ class InfoCardActivity : AppCompatActivity() {
         countryFlagView.setImageDrawable(res)
 
         val countryCapital = findViewById<TextView>(R.id.countryCapital)
-        countryCapital.text = "Capital: $capital"
+        countryCapital.text = "CAPITAL: $capital"
 
-        val countryPresident = findViewById<TextView>(R.id.countryPresident)
-        countryPresident.text = "President: $president"
+        if (president.isNotEmpty() && primeMinister.isNullOrEmpty()){
+            val countryPresident = findViewById<TextView>(R.id.countryPresident)
+            countryPresident.text = "PRESIDENT: $president"
 
-        val countryPrimeMinister1 = findViewById<TextView>(R.id.countryPrimeMinister1)
-        countryPrimeMinister1.text = "Prime Minister: $primeMinister"
+            val countryArea1 = findViewById<TextView>(R.id.countryArea1)
+            countryArea1.text = "AREA: $area"
 
-        val countryPrimeMinister2 = findViewById<TextView>(R.id.countryPrimeMinister2)
-        countryPrimeMinister2.text = "Prime Minister: $primeMinister"
+            val countryPopulation1 = findViewById<TextView>(R.id.countryPopulation1)
+            countryPopulation1.text = "POPULATION: $population"
+        }
 
-        val countryArea = findViewById<TextView>(R.id.countryArea)
-        countryArea.text = "Area: $area"
+        if (president.isNullOrEmpty() && primeMinister.isNotEmpty()){
+            val countryPrimeMinister1 = findViewById<TextView>(R.id.countryPrimeMinister1)
+            countryPrimeMinister1.text = "PRIME MINISTER: $primeMinister"
 
-        val countryPopulation = findViewById<TextView>(R.id.countryPopulation)
-        countryPopulation.text = "Population: $population"
+            val countryArea1 = findViewById<TextView>(R.id.countryArea1)
+            countryArea1.text = "AREA: $area"
+
+            val countryPopulation1 = findViewById<TextView>(R.id.countryPopulation1)
+            countryPopulation1.text = "POPULATION: $population"
+        }
+
+
+        if (president.isNotEmpty() && primeMinister.isNotEmpty()) {
+            val countryPresident = findViewById<TextView>(R.id.countryPresident)
+            countryPresident.text = "PRESIDENT: $president"
+
+            val countryPrimeMinister2 = findViewById<TextView>(R.id.countryPrimeMinister2)
+            countryPrimeMinister2.text = "PRIME MINISTER: $primeMinister"
+
+            val countryArea2 = findViewById<TextView>(R.id.countryArea2)
+            countryArea2.text = "AREA: $area"
+
+            val countryPopulation2 = findViewById<TextView>(R.id.countryPopulation2)
+            countryPopulation2.text = "POPULATION: $population"
+        }
 
     }
 

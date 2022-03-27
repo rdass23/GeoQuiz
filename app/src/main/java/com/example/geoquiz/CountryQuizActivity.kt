@@ -1,13 +1,15 @@
 package com.example.geoquiz
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.Gravity
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.opencsv.CSVParserBuilder
 import com.opencsv.CSVReaderBuilder
 import java.io.InputStreamReader
@@ -20,6 +22,16 @@ class CountryQuizActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var choiceB: Button
     private lateinit var choiceC: Button
     private lateinit var choiceD: Button
+
+    private lateinit var correctA: ImageView
+    private lateinit var correctB: ImageView
+    private lateinit var correctC: ImageView
+    private lateinit var correctD: ImageView
+
+    private lateinit var wrongA: ImageView
+    private lateinit var wrongB: ImageView
+    private lateinit var wrongC: ImageView
+    private lateinit var wrongD: ImageView
 
     private var countries = arrayListOf<Country>()
     private var correct = 0
@@ -35,6 +47,16 @@ class CountryQuizActivity : AppCompatActivity(), View.OnClickListener {
         choiceB = findViewById<Button>(R.id.choiceB)
         choiceC = findViewById<Button>(R.id.choiceC)
         choiceD = findViewById<Button>(R.id.choiceD)
+
+        correctA = findViewById<ImageView>(R.id.correctCA)
+        correctB = findViewById<ImageView>(R.id.correctCB)
+        correctC = findViewById<ImageView>(R.id.correctCC)
+        correctD = findViewById<ImageView>(R.id.correctCD)
+
+        wrongA = findViewById<ImageView>(R.id.wrongCA)
+        wrongB = findViewById<ImageView>(R.id.wrongCB)
+        wrongC = findViewById<ImageView>(R.id.wrongCC)
+        wrongD = findViewById<ImageView>(R.id.wrongCD)
 
         choiceA.setOnClickListener(this)
         choiceB.setOnClickListener(this)
@@ -69,9 +91,20 @@ class CountryQuizActivity : AppCompatActivity(), View.OnClickListener {
             intent.putExtra("gametype", "countryquiz")
             startActivity(intent)
         } else {
+            hideAllImages()
             setupQuestion()
         }
+    }
 
+    fun hideAllImages() {
+        correctA.visibility = View.INVISIBLE
+        correctB.visibility = View.INVISIBLE
+        correctC.visibility = View.INVISIBLE
+        correctD.visibility = View.INVISIBLE
+        wrongA.visibility = View.INVISIBLE
+        wrongB.visibility = View.INVISIBLE
+        wrongC.visibility = View.INVISIBLE
+        wrongD.visibility = View.INVISIBLE
     }
 
     fun setupQuestion() {
@@ -166,38 +199,69 @@ class CountryQuizActivity : AppCompatActivity(), View.OnClickListener {
         return retWrong
     }
 
+    fun showCorrectImages(correct: Choice) {
+        wrongA.visibility = View.VISIBLE
+        wrongB.visibility = View.VISIBLE
+        wrongC.visibility = View.VISIBLE
+        wrongD.visibility = View.VISIBLE
+        if (correct == Choice.A) {
+            wrongA.visibility = View.INVISIBLE
+            correctA.visibility = View.VISIBLE
+        } else if (correct == Choice.B) {
+            wrongB.visibility = View.INVISIBLE
+            correctB.visibility = View.VISIBLE
+        } else if (correct == Choice.C) {
+            wrongC.visibility = View.INVISIBLE
+            correctC.visibility = View.VISIBLE
+        } else if (correct == Choice.D) {
+            wrongD.visibility = View.INVISIBLE
+            correctD.visibility = View.VISIBLE
+        }
+    }
+
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.choiceA ->
+            R.id.choiceA -> {
                 if (correctAnswer == Choice.A) {
                     Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
                     correct += 1
                 } else {
                     Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
-            R.id.choiceB ->
+            }
+            R.id.choiceB -> {
                 if (correctAnswer == Choice.B) {
                     Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
                     correct += 1
                 } else {
                     Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
-            R.id.choiceC ->
+            }
+
+            R.id.choiceC -> {
                 if (correctAnswer == Choice.C) {
                     Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
                     correct += 1
                 } else {
                     Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
-            R.id.choiceD ->
+            }
+            R.id.choiceD -> {
                 if (correctAnswer == Choice.D) {
                     Toast.makeText(this, "Correct Answer", Toast.LENGTH_SHORT).show()
                     correct += 1
                 } else {
                     Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show()
                 }
+            }
         }
-        runQuiz()
+        showCorrectImages(correctAnswer)
+        Handler().postDelayed(this::runQuiz, 3000)
+    }
+
+    fun exitQuiz(view: View) {
+        val intent = Intent(this, QuizSelectionActivity::class.java)
+        startActivity(intent)
     }
 
     enum class Choice {

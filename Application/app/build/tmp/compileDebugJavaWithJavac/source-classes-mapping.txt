@@ -1,0 +1,2 @@
+com/example/robotheexplorer/BuildConfig.java
+ com.example.robotheexplorer.BuildConfig

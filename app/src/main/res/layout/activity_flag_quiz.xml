@@ -5,6 +5,7 @@
     android:id="@+id/exitButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EAF6E7"
     tools:context=".FlagQuizActivity">
 
     <Button
@@ -49,7 +50,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="168dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#FFEB3B"
+        android:backgroundTint="#F4B908"
         android:text="Button"
         app:layout_constraintStart_toEndOf="@+id/choiceAFlag"
         app:layout_constraintTop_toBottomOf="@+id/flagView"

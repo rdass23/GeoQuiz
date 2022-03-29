@@ -35,7 +35,7 @@ class WorldLeaderboardActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    color = Color(0xFFEAF6E7)
                 ) {
                     WorldLeaderBoardScreen()
                 }

@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -35,7 +36,7 @@ class WorldLeaderboardActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = Color(0xFFEAF6E7)
+                    color = MaterialTheme.colors.background
                 ) {
                     WorldLeaderBoardScreen()
                 }
@@ -46,6 +47,9 @@ class WorldLeaderboardActivity : ComponentActivity() {
 
 @Composable
 fun WorldLeaderBoardScreen() {
+    Scaffold(topBar = {
+        TopAppBarContent()
+    }) {
     Column(Modifier.fillMaxSize()) {
         Text(
             text = "WORLD LEADERBOARD",
@@ -54,7 +58,7 @@ fun WorldLeaderBoardScreen() {
             style = MaterialTheme.typography.h4
         )
         TableScreen()
-    }
+    }}
 }
 
 @Composable

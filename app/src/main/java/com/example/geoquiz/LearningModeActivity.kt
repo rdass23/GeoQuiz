@@ -90,7 +90,6 @@ class LearningModeActivity : AppCompatActivity() {
         val actionType = ev.action
         when (actionType) {
             MotionEvent.ACTION_UP -> {
-               println(ev.actionButton.toString())
                 val proj: Projection = map.projection
                 val loc: GeoPoint = proj.fromPixels(ev.x.toInt(), ev.y.toInt()) as GeoPoint
                 val longitude = loc.longitude
@@ -99,12 +98,11 @@ class LearningModeActivity : AppCompatActivity() {
                 if (results != null) {
                     if(results.size > 0) {
                         val country = results[0].countryName
-                        if (!country.equals("Antarctica")){
-                            val intent = Intent(this, InfoCardActivity::class.java).apply {
-                                putExtra("country", country)
-                            }
-                            startActivity(intent)
+
+                        val intent = Intent(this, InfoCardActivity::class.java).apply {
+                            putExtra("country", country)
                         }
+                        startActivity(intent)
                     }
                 }
             }

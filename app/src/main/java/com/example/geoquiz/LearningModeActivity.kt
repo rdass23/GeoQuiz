@@ -99,10 +99,13 @@ class LearningModeActivity : AppCompatActivity() {
                     if(results.size > 0) {
                         val country = results[0].countryName
 
-                        val intent = Intent(this, InfoCardActivity::class.java).apply {
-                            putExtra("country", country)
+                        if (!country.equals("Antarctica")){
+                            val intent = Intent(this, InfoCardActivity::class.java).apply {
+                                putExtra("country", country)
+                            }
+                            startActivity(intent)
                         }
-                        startActivity(intent)
+
                     }
                 }
             }
